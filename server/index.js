@@ -1,6 +1,16 @@
 const express = require('express');
 const path = require('path');
 
+const DB_URL = process.env.DATABASE_URL;
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: DB_URL,
+  ssl: true
+});
+
+const app = express();
+
+const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
