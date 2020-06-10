@@ -10,6 +10,7 @@ const pool = new Pool({
 
 const app = express();
 
+const Handler = require('./handlers.js');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
