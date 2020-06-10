@@ -29,6 +29,36 @@ function convertFromAlgebraic(a) {
 
 function ifValid (i) { return ( i >= 0 && i <= 7 ) };
 
+function knightMoves(knight) {
+  let results = [];
+  let moveRow;
+  let moveCol;
+
+  function verticalHelper(moveRow) {
+    moveCol = knight['col'] - 1;
+    if ( ifValid(moveCol) ) results.push({'row' : moveRow, 'col' : moveCol});
+    moveCol = knight['col'] + 1;
+    if ( ifValid(moveCol) ) results.push({'row' : moveRow, 'col' : moveCol});
+  }
+  moveRow = knight['row'] - 2;
+  if ( ifValid(moveRow ) ) verticalHelper(moveRow);
+  moveRow = knight['row'] + 2;
+  if ( ifValid(moveRow ) ) verticalHelper(moveRow);
+
+  function horizontalHelper(moveCol) {
+    moveRow = knight['row'] - 1;
+    if ( ifValid(moveRow) ) results.push({'row' : moveRow, 'col' : moveCol});
+    moveRow = knight['row'] + 1;
+    if ( ifValid(moveRow) ) results.push({'row' : moveRow, 'col' : moveCol});
+  }
+  moveCol = knight['col'] - 2;
+  if ( ifValid(moveCol ) ) horizontalHelper(moveCol);
+  moveCol = knight['col'] + 2;
+  if ( ifValid(moveCol ) ) horizontalHelper(moveCol);
+  
+  return results;
+}
+
 function populateSet(s, positions) {
   for (const pos of positions) {
     s.add(`${pos.row}_${pos.col}`);
@@ -36,5 +66,8 @@ function populateSet(s, positions) {
 }
 
 module.exports = {
-
+  convertFromAlgebraic,
+  knightMoves,
+  populateSet,
+  ifValid
 };
