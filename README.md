@@ -1,4 +1,4 @@
-# Rando
+# Chess Knight
 
 A password generator built with React and Express.
 
