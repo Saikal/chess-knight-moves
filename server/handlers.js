@@ -29,6 +29,12 @@ function convertFromAlgebraic(a) {
 
 function ifValid (i) { return ( i >= 0 && i <= 7 ) };
 
+function populateSet(s, positions) {
+  for (const pos of positions) {
+    s.add(`${pos.row}_${pos.col}`);
+  }
+}
+
 module.exports = {
 
 };
