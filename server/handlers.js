@@ -27,6 +27,8 @@ function convertFromAlgebraic(a) {
   } else return { row: rows[a[1]], col: cols[a[0]] };
 }
 
+function ifValid (i) { return ( i >= 0 && i <= 7 ) };
+
 module.exports = {
 
 };
