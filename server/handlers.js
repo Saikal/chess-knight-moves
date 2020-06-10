@@ -21,6 +21,12 @@ const rows = {
   1 : 7
 };
 
+function convertFromAlgebraic(a) {
+  if (a.length !== 2 || rows[a[1]] == null || cols[a[0]] == null) {
+    return null;
+  } else return { row: rows[a[1]], col: cols[a[0]] };
+}
+
 module.exports = {
 
 };
