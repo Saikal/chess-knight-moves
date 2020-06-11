@@ -63,7 +63,7 @@ class App extends React.Component {
   shouldComponentUpdate (nextProps, nextState) {
     return false;
   }
-
+  
   clickEnable (loc) {
     this.refBoard.current[`${loc}`].cell.style.pointerEvents = 'auto';
   }
@@ -94,6 +94,33 @@ class App extends React.Component {
       this.refKnightsToggle(this.state.activeMoves, []);
     }
     this.refBoard.current[`${location}`].cell.style.backgroundImage = "url('knight.svg')";
+  }
+
+  knightApi () {
+    this.toggleLoader("visible");
+    axios.post('/move', {
+      location: this.convertToAlgebraic(this.state.cellSelect)
+    })
+    .then(res => {
+      if(res.data) {
+        this.refKnightsToggle(res.data['moves_first'], this.state.activeMoves);
+        this.refSetKnight(this.state.cellSelect);
+        this.refHistoryUpdate(this.state.history + " " + this.convertToAlgebraic(this.state.cellSelect));
+        this.setState({
+          activeMoves: res.data['moves_first'],
+          movesFirst: res.data['moves_first'],
+          movesSecond: res.data['moves_second'],
+          cellSelect: null,
+          moves: 1
+        });
+        this.refButtonMove.current.innerHTML = "Turn II";
+        const that = this;
+        this.state.board.map(r => r.map(c => that.clickDisable(c['loc'])));
+        this.toggleLoader("hidden");
+      } else window.location.reload();
+    }, (err) => {
+      console.log('Error: ', err);
+    }); 
   }
 
   knightMove () {
