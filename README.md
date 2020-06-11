@@ -70,6 +70,7 @@ Few things to keep in mind:
       And supported by different Browsers
 - Built Screen Loader when API async processes
 - Full Stack App
+- Had an issue with the system environment, had to move everything to a better boilerplate (affected git commits)
 - App has DB set up in Heroku. Uses Postgres for Database Management System. 
       DB and App are deployed in Heroku. Check https://chess-knight.herokuapp.com/
 - Uses Knight figures. Black Knight - to set knight's position, White Knights - to show potential knight moves.
