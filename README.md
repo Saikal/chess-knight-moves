@@ -74,6 +74,7 @@ Few things to keep in mind:
 - Uses Knight figures. Black Knight - to set knight's position, White Knights - to show potential knight moves.
 - App shows History of Moves
 - React Ref, Reduced Component Rerendering etc. for better Performance and Optimization
+- Has Favicon Icon and App Logo
 
 
 
