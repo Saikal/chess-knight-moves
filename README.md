@@ -1,7 +1,8 @@
 # Chess Knight
 
-Chess Knight App allows you to set Knight anywhere within the Chess Board and see 
- all possible Knight Moves - Turn I and Turn II.
+Chess Knight App allows you to set Knight anywhere within the Chess Board 
+
+and see all possible Knight Moves - Turn I and Turn II.
 
 When you get in to the App you see step-by-step Instruction how to use the App - App Wizard.
 
@@ -57,7 +58,7 @@ and other
 
 ### FYI
 
-Knight 
+
 Few things to keep in mind:
 - Each Knight selection shows exactly 2 turns - Turn I and Turn II 
       (first and sencond turns - both are in one API). You can select a new Knight move after the second turn.
