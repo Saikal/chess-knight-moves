@@ -1,30 +1,79 @@
 # Chess Knight
 
-A password generator built with React and Express.
+Chess Knight App allows you to setup Knight anywhere within the Chess Board and see all possible Knight Moves - Turn I and Turn II
 
-This is a minimal demo of using Create React App to bootstrap a React project, connect the React app to an Express backend, and deploy the whole thing to Heroku.
+Deployed App in Heroku, follow the link: [Chess-Knight App. Deployed in Heroku](https://chess-knight.herokuapp.com/)
 
-Read the blog post: [Create React App with Express in
-Production](https://daveceddia.com/create-react-app-express-production/)
+## Using NPM
 
-## Prerequisites
+This Repo is Open Source, feel free to run it on your local machine. 
+Clone Repo and follow instructions below to Start the App
 
-You need to [sign up](https://heroku.com/) for a Heroku account if you don't already have one, and install the [Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli). (On a Mac with Homebrew, just run `brew install heroku`).
+Start Backend:
 
-## Deploy to Heroku
+1. `cd ae-studio-assignment`
+2. `npm install`
+3. `npm start`
 
-To deploy:
+Start Frontend:
 
-1. Clone this repo.
-2. Inside the repo directory, run `heroku create` (requires [Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli)).
-3. Run `git push heroku master` to simultaneously deploy the frontend + backend to Heroku.
+1. `cd ae-studio-assignment/client`
+2. `npm install`
+3. `npm start`
 
-### Using NPM
 
-Check out the `npm` branch if you're not using Yarn:
+## Run Tests
 
-`git checkout npm`
+Backend Test:
 
-And then once on that branch, the deploy command is:
+1. `cd ae-studio-assignment`
+2. `npm test server/test.js`
 
-`git push heroku npm:master`
+Frontend Test:
+
+1. `cd ae-studio-assignment/client`
+2. `npm test`
+
+
+### Tech Stack Used:
+
+React.js
+
+Express.js
+
+Axios
+
+Postgresql (but commented out postgres queries recently, still can see it in server/index.js file, because since App doesn't have Users assigned - DB is not neccessary per session. Moves History saved locally in App Frontend)
+
+and other.
+
+
+
+### More Description
+
+A knight can move either 2 squares horizontally and 1 square vertically OR 2 squares vertically
+and 1 square horizontally.
+
+Chess has 64 squares/cells arranged in an 8x8 grid.
+
+Assignment. User stories:
+As a user I want to see a chessboard on the screen because I want to interact with it by setting
+the Knight initial position
+● The chessboard does not need to be responsive (this is out of scope)
+● User should be able to select a cell by clicking/tapping on it and the cell should be
+highlighted
+● Only one cell should be selected at a time
+As a user I want to be able to click/tap a button and have the app highlight all cells where the
+Knight can move in exactly 2 turns because I want to see the results
+● The app should make an API call to get the cells it has to highlight
+● The Knight position should be sent to the API in Algebraic notation (D4, A5, H8, A1, ...)
+● The logic to calculate possible positions should be in the backend
+● The backend should only accept the Knight position if it’s in Algebraic notation (D4, A5,
+H8, A1, ...), otherwise it should return an error
+As a user I want to understand how the app works and how I should use it because I need clear
+instructions to be able to use it
+● Create an introduction page in a form of a steps wizard and illustrate how the app works
+and what to expect
+● The wizard page should be responsive and work on all devices
+
+
