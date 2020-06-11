@@ -158,16 +158,16 @@ class App extends React.Component {
       moves: 0,
     });
     const that = this;
-    this.state.board.map(r => r.map(c => that.clickEnable(c['loc'])));
-    this.refKnightsToggle([], this.state.activeMoves);
     this.refHistoryUpdate("");
+    this.refKnightsToggle([], this.state.activeMoves);
+    this.state.board.map(r => r.map(c => that.clickEnable(c['loc'])));
   }
 
   render() {
     return (
       <div id="chess-knight">
         <div className="loader" ref={this.refLoader}><h1>LOADING...</h1></div>
-        <Wizard refSetKnight={this.refSetKnight.bind(this)} onClickTurn={this.knightMove.bind(this)} setToInitial={this.setToInitial.bind(this)} toggleLoader={this.toggleLoader.bind(this)}/>        
+        <Wizard refSetKnight={this.refSetKnight.bind(this)} onClickTurn={this.knightMove.bind(this)} setToInitial={this.setToInitial.bind(this)} toggleLoader={this.toggleLoader.bind(this)}/>
         <div className="board-text">
           <h1>Chess - Knight</h1>
         </div>
