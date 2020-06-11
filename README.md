@@ -7,7 +7,7 @@ and see all possible Knight Moves - Turn I and Turn II.
 When you get in to the App you see step-by-step Instruction how to use the App - App Wizard.
 
 Deployed App in Heroku, please follow the link: 
-      [Chess Knight App](https://chess-knight.herokuapp.com/)
+      [Chess Knight App](https://aestudio.herokuapp.com/)
 
 ### Using NPM
 
