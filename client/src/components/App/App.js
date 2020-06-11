@@ -35,6 +35,10 @@ class App extends React.Component {
     }
   }
 
+  toggleLoader (loader) {
+    this.refLoader.current.style.visibility = loader;
+  }
+
   setToInitial () {
     this.setState({
       cellSelect: null,
