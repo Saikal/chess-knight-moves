@@ -35,6 +35,21 @@ class App extends React.Component {
     }
   }
 
+  setToInitial () {
+    this.setState({
+      cellSelect: null,
+      movesFirst: [],
+      movesSecond: [],
+      activeMoves: [],
+      history: "",
+      moves: 0,
+    });
+    const that = this;
+    this.state.board.map(r => r.map(c => that.clickEnable(c['loc'])));
+    this.refKnightsToggle([], this.state.activeMoves);
+    this.refHistoryUpdate("");
+  }
+
   render() {
     return (
       <div id="chess-knight">
