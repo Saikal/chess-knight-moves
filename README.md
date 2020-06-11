@@ -1,6 +1,6 @@
 # Chess Knight
 
-Chess Knight App allows you to set Knight anywhere within the Chess Board 
+Chess Knight App allows you to set the Knight anywhere within the Chess Board 
 
 and see all possible Knight Moves - Turn I and Turn II.
 
