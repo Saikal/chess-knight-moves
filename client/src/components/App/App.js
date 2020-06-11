@@ -39,6 +39,13 @@ class App extends React.Component {
     this.refLoader.current.style.visibility = loader;
   }
 
+  refHistoryUpdate (history) {
+    this.setState({
+      history: history
+    });
+    this.refHistory.current.innerHTML = history;
+  }
+
   convertToAlgebraic (loc) {
     const algebraic = {
       '0': 'a',
