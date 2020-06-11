@@ -1,7 +1,7 @@
 # Chess Knight
 
 Chess Knight App allows you to set Knight anywhere within the Chess Board and see 
-all possible Knight Moves - Turn I and Turn II.
+ all possible Knight Moves - Turn I and Turn II.
 
 When you get in to the App you see step-by-step Instruction how to use the App - App Wizard.
 
@@ -9,7 +9,7 @@ Deployed App in Heroku, follow the link: [Chess Knight App](https://chess-knight
 
 ### Using NPM
 
-Run the App locally. 
+Run App locally. 
 Clone Repo and follow instructions below to Start the App
 
 Start Backend:
