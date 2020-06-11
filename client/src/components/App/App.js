@@ -82,6 +82,16 @@ class App extends React.Component {
   render() {
     return (
       <div id="chess-knight">
+        <div className="loader" ref={this.refLoader}><h1>LOADING...</h1></div>
+        <div className="board-text">
+          <h1>Chess - Knight</h1>
+        </div>
+        <hr />
+        <Board ref={this.refBoard} board={this.state.board} refSetKnight={this.refSetKnight.bind(this)} />
+        <button className="btn-app" onClick={this.knightMove.bind(this)} ref={this.refButtonMove} >Turn I</button>
+        <div className="board-text history">Moves History<br></br>
+          <h1 ref={this.refHistory}> </h1>
+        </div>
       </div>
     );
   }
