@@ -60,6 +60,10 @@ class App extends React.Component {
     return algebraic[loc[2]] + (8 - parseInt(loc[0], 10));
   }
 
+  shouldComponentUpdate (nextProps, nextState) {
+    return false;
+  }
+
   setToInitial () {
     this.setState({
       cellSelect: null,
