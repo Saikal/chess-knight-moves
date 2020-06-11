@@ -61,9 +61,9 @@ and other
 
 Few things to keep in mind:
 - Each Knight selection shows exactly 2 turns - Turn I and Turn II 
-      (first and sencond turns - both are in one API).
+      (1st and 2nd turns - both are in one API).
       
-            ### You can select a new Knight position after the secont turn - Turn II.
+            You can select a new Knight position after the secont turn - Turn II.
             
 - Wizard and App itself are responsive within different UI sizes: Desktop, Mobile, Laptop, Tablet. 
       And supported by different Browsers
