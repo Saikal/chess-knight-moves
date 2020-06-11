@@ -1,5 +1,215 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.btn-app {  
+  margin: 15px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+}
+
+#chess-knight {
+  text-align: center;
+  align-items: center;
+  padding-top: 25px;
+  height: 1050px;
+}
+
+#wizard {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  padding: 5px 50px;
+  height: 1050px;
+}
+
+#wizard h1 {
+  font-size: 16px;
+  position: absolute;
+  background: yellow;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#wizard .h1-header {
+  top: 10px;
+}
+
+#wizard .h1-board {
+  top: 380px;
+}
+
+#wizard .h1-btn {
+  top: 700px;
+}
+
+#wizard .h1-history {
+  top: 810px;
+}
+
+.wizard-next {
+  float: right;
+  background: yellow;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer !important;
+}
+
+#board {
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  width: 640px;
+  height: 640px;
+}
+
+.history {
+  width: 85%;
+  height: 150px;
+  font-size: 24px;
+  border-color: #0082A3;
+  border-radius: 10px;
+  margin: auto;
+  padding: 10px;
+}
+
+.history h1 {
+  font-size: 20px;
+}
+
+.chess-board {
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 40px 70px 70px 70px 70px 70px 70px 70px 70px 40px;
+}
+
+.black {
+  background-color: #9b5632;
+}
+
+.white {
+  background-color: #f1e8e0;
+}
+
+.grid-item {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 70px;
+  cursor: pointer !important;
+}
+
+.vertical-algebraic, .horizontal-algebraic, .btn-app, .board-text {
+  background-color: #822d00;
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  color: white;
+}
+
+.vertical-algebraic {
+  height: 70px;
+  padding-top: 22px;
+}
+
+.horizontal-algebraic {
+  height: 40px;
+  padding-top: 8px;
+}
+
+.loader {
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.2);
+  padding: 100px;
+  height: 1050px;
+}
+
+.loader h1 {
+  color: orange;
+}
+
+@media only screen and (max-width: 800px) {
+
+  #chess-knight {
+    height: 500px;
+  }
+
+  #board {
+    width: 304px;
+    height: 304px;
+  }
+
+  .grid-container {
+    height: 32px;
+    grid-template-columns: 24px 32px 32px 32px 32px 32px 32px 32px 32px 24px;
+  }
+  .grid-item {
+    height: 32px;
+  }
+  .vertical-algebraic {
+    height: 32px;
+    padding-top: 4px !important;
+  }
+
+  .horizontal-algebraic {
+    height: 24px;
+    padding-top: 0px !important;
+  }
+
+  .loader {
+    height: 500px;
+  }
+
+  .loader h1 {
+    font-size: 18px;  
+  }
+
+  #wizard {
+    padding: 15px;
+  }
+
+  .wizard-next {
+    float: left;
+  }
+
+  #wizard h1 {
+    font-size: 10px;
+    width: 280px;
+    padding: 5px;
+  }
+
+  #wizard .h1-header {
+    top: 70px;
+  }
+
+  #wizard .h1-board {
+    top: 280px;
+  }
+
+  #wizard .h1-btn {
+    top: 380px;
+  }
+
+  #wizard .h1-history {
+    top: 460px;
+  }
 }
