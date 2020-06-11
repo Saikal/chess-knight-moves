@@ -63,7 +63,7 @@ class App extends React.Component {
   shouldComponentUpdate (nextProps, nextState) {
     return false;
   }
-  
+
   clickEnable (loc) {
     this.refBoard.current[`${loc}`].cell.style.pointerEvents = 'auto';
   }
@@ -167,6 +167,7 @@ class App extends React.Component {
     return (
       <div id="chess-knight">
         <div className="loader" ref={this.refLoader}><h1>LOADING...</h1></div>
+        <Wizard refSetKnight={this.refSetKnight.bind(this)} onClickTurn={this.knightMove.bind(this)} setToInitial={this.setToInitial.bind(this)} toggleLoader={this.toggleLoader.bind(this)}/>        
         <div className="board-text">
           <h1>Chess - Knight</h1>
         </div>
