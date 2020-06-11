@@ -64,6 +64,63 @@ class App extends React.Component {
     return false;
   }
 
+  clickEnable (loc) {
+    this.refBoard.current[`${loc}`].cell.style.pointerEvents = 'auto';
+  }
+
+  clickDisable (loc) {
+    this.refBoard.current[`${loc}`].cell.style.pointerEvents = 'none';
+  }
+
+  refKnightsToggle (nextLocs, prevLocs) {
+    prevLocs.forEach(loc => {
+      this.refBoard.current[`${loc}`].cell.style.backgroundImage = "none";
+      this.clickDisable(loc);
+    });
+    nextLocs.forEach(loc => {
+      this.refBoard.current[`${loc}`].cell.style.backgroundImage = "url('knight-white.svg')";
+      this.clickEnable(loc);
+    });
+  }
+
+  refSetKnight (location) {
+    this.setState({
+      cellSelect: location
+    });
+    if(this.state.cellSelect) {
+      this.refBoard.current[`${this.state.cellSelect}`].cell.style.backgroundImage = "none";
+    }
+    if (this.state.moves === 2) {
+      this.refKnightsToggle(this.state.activeMoves, []);
+    }
+    this.refBoard.current[`${location}`].cell.style.backgroundImage = "url('knight.svg')";
+  }
+
+  knightMove () {
+    if(!this.state.moves && this.state.cellSelect) {
+      this.knightApi();
+      this.setState({
+        moves: 1
+      })
+    } else if(this.state.moves && !this.state.cellSelect) {
+        if(this.state.moves === 1) {
+          this.refKnightsToggle(this.state.movesSecond, this.state.activeMoves);
+          this.setState({
+            activeMoves: this.state.movesSecond,
+            moves: 2
+          });
+          this.refButtonMove.current.innerHTML = "Turn I";
+
+          const that = this;
+          this.state.movesSecond.forEach(function(loc) {that.clickEnable(loc)});
+        }
+    } else if(this.state.moves && this.state.cellSelect) {
+        this.refSetKnight(this.state.cellSelect);
+        this.knightApi();
+        this.setState({ moves: 1 });
+    } 
+  }
+
   setToInitial () {
     this.setState({
       cellSelect: null,
